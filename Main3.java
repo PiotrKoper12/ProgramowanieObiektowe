@@ -1,8 +1,10 @@
 import java.util.Arrays;
 import java.lang.Math;
+import java.util.Scanner;
 
-public class Main
+public class Main3
 {
+
     private static void zad1()
     {
         int n = 10;
@@ -13,12 +15,12 @@ public class Main
                 for(int k = j+1; k <= n; k++)
                 {
 
-                        int[] tab={i,j,k};
-                        Arrays.sort(tab);
-                        if(tab[0]*tab[0]+tab[1]*tab[1]==tab[2]*tab[2])
-                        {
-                            System.out.println(tab[0]+" "+tab[1]+" "+tab[2]);
-                        }
+                    int[] tab={i,j,k};
+                    Arrays.sort(tab);
+                    if(tab[0]*tab[0]+tab[1]*tab[1]==tab[2]*tab[2])
+                    {
+                        System.out.println(tab[0]+" "+tab[1]+" "+tab[2]);
+                    }
 
 
                 }
@@ -28,21 +30,21 @@ public class Main
 
     private static void zad2()
     {
-            int n = 3;
-            for(int i = 1; i <= n; i++)
+        int n = 3;
+        for(int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= n; j++)
             {
-                for (int j = 1; j <= n; j++)
+                for (int k = 1; k <= n; k++)
                 {
-                    for (int k = 1; k <= n; k++)
-                    {
 
-                        if( j*j - (4*i*k)>=0)
-                        {
-                            System.out.println("wzór = "+i+"x^2 + "+j+"x + "+k);
-                        }
+                    if( j*j - (4*i*k)>=0)
+                    {
+                        System.out.println("wzór = "+i+"x^2 + "+j+"x + "+k);
                     }
                 }
             }
+        }
     }
     private static void zad3()
     {
@@ -233,10 +235,59 @@ public class Main
         return czyprawda;
     }
 
+    private static void zad16(int liczba)
+    {
+        int wynik = 0;
+        for(int i = 1; i < liczba; i++)
+        {
+            if(liczba%i==0)
+            {
+                wynik=wynik+i;
+            }
+        }
+        System.out.println(wynik==liczba);
+    }
+
+    private static boolean zad17(int n)
+    {
+        boolean wynik = true;
+        for(int i = 2; i < n; i++)
+        {
+            if(n%i==0)
+            {
+                wynik=false;
+            }
+        }
+        return wynik;
+    }
+    private static int zad18(int x,int y)
+    {
+        int wynik = 1;
+        for(int i = 1; i <= x; i++)
+        {
+            if(x%i==0&&y%i==0)
+            {
+                wynik=i;
+            }
+        }
+        return wynik;
+    }
+    private static int[] zad19(int n)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int []tab=new int[n];
+        for(int i = 1; i <= n; i++)
+        {
+            System.out.print("podaj liczbe ziomek\n");
+            tab[i-1]=scanner.nextInt();
+        }
+
+        return tab;
+    }
 
     public static void main(String[] args)
     {
-
+        
 
 
 
