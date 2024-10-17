@@ -285,9 +285,47 @@ public class Main3
         return tab;
     }
 
+    private static boolean zad15(int n)
+    {
+        boolean wynik = true;
+        int liczba = n;
+        int dlugoscliczby = 0;
+
+        while(n>1)
+        {
+            n = n/10;
+            dlugoscliczby++;
+        }
+        int wyznacznik = (int)Math.pow(10,dlugoscliczby-1);
+
+
+
+        while(liczba>10)
+        {
+            int pierwszaliczba = liczba/wyznacznik;
+
+            int ostatnialiczba = liczba;
+            ostatnialiczba = ostatnialiczba/10;
+            ostatnialiczba = ostatnialiczba *10;
+            ostatnialiczba = liczba-ostatnialiczba;
+
+            if(pierwszaliczba!=ostatnialiczba)
+            {
+                return false;
+
+            }
+            liczba = liczba - wyznacznik*pierwszaliczba;
+            liczba = (liczba-ostatnialiczba)/10;
+            wyznacznik = wyznacznik/100;
+
+        }
+        return wynik;
+    }
+
     public static void main(String[] args)
     {
-        
+        int n = 5555;
+        System.out.println(zad15(n));
 
 
 
